@@ -1,6 +1,6 @@
 import Cookies from "js-cookie"
 import { useState } from "react"
-import { useNavigate, Link } from "react-router-dom"
+import { useNavigate, Link,Navigate } from "react-router-dom"
 import "./index.css"
 
 const Login = () => {
@@ -93,8 +93,8 @@ const Login = () => {
     }
 
     const jwtToken=Cookies.get("jwt_token")
-    if (jwtToken) {
-        navigate('/weather')
+    if(jwtToken){
+        return <Navigate to="/weather" />
     }
 
 

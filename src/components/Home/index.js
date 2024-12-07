@@ -1,7 +1,11 @@
-import { Link } from "react-router-dom";
+import { Link,Navigate } from "react-router-dom";
+import Cookies from "js-cookie";
 import "./index.css"
 const Home = () => {
-    console.log()
+    const jwtToken=Cookies.get("jwt_token")
+    if(jwtToken){
+        return <Navigate to="/weather" />
+    }
     return (
         <div className="app">
             <div className="home-left-container"> 

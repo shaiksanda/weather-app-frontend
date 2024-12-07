@@ -6,6 +6,7 @@ import Login from "./components/Login"
 import Register from "./components/Register"
 import Weather from "./components/Weather"
 import ForgotPassword from "./components/ForgotPassword"
+import ProtectedRoute from "./components/ProtectedRoute";
 import './App.css';
 
 function App() {
@@ -15,9 +16,9 @@ function App() {
         <Routes>
           <Route path="/login"  element={<Login />} />
           <Route path="/register" element={<Register />} />
-          <Route exact path="/" element={<Home />} />
-          <Route exact path="/weather" element={<Weather />} />
-          <Route exact path="/forgot-password" element={<ForgotPassword />} />
+          <Route  path="/" element={<Home />} />
+          <Route  path="/weather" element={<ProtectedRoute element={<Weather />} />} />
+          <Route  path="/forgot-password" element={<ForgotPassword />} />
         </Routes>
       </BrowserRouter>
     
