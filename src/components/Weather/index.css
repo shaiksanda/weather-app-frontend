@@ -3,3 +3,87 @@
     height: 30px;
     border-radius: 100px;
 }
+
+.weather-container{
+    /* background: linear-gradient(to bottom, #98FB98, #32CD32); */
+    height: 100vh;
+}
+
+.weather-data-container{
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+    gap:10px;
+    padding:10px
+}
+
+.icon{
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+}
+
+.data-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 8px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.content{
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.data-container-1{
+    background-color: orange;
+}
+.data-container-2{
+    background-color: lavender;
+}
+.data-container-3{
+    background-color: mediumpurple;
+}
+.data-container-4{
+    background-color: #FF6347;
+}
+.data-container-5{
+    background-color: plum;
+}
+.data-container-6{
+    background-color: purple;
+}
+.data-container-7{
+    background-color: palevioletred;
+}
+.data-container-8{
+    background-color: pink;;
+}
+
+.data-container-9{
+    background-color: greenyellow;
+}
+.data-container-10{
+    background-color: cornsilk;
+}
+
+
+
+
+
+
+
+.data-container:hover{
+    transform: scale(1.02);
+    background-color: black;
+    color:white
+}
+
+
+@media screen and (min-width: 768px){
+    .weather-data-container{
+        grid-template-columns: repeat(3,1fr);
+    }
+}
