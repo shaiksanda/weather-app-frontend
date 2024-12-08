@@ -20,8 +20,8 @@ const Weather = () => {
             alert("Unable to get location")
         },{
             enableHighAccuracy: true,  // Request high accuracy
-            timeout: 5000,  // Timeout after 5 seconds
-            maximumAge: 0,  // Do not use cached location
+            
+           
           })
 
     }
