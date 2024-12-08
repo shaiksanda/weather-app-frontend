@@ -4,6 +4,12 @@
     justify-content: space-between;
     align-items: center;
     padding: 0px 10px 0px 10px;
+    background-color: lavender;
+    position: fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 .logo{
@@ -12,8 +18,100 @@
     cursor: pointer;
 }
 
+.logout-button{
+    width: 120px;
+    height: 50px;
+    border-radius: 8px;
+    border-width: 0px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: orange;
+    outline: none;
+}
+.logout-button{
+    display: none;
+}
+
+.logout-button:hover{
+    color:white;
+    background-color: orangered;
+    transform: scale(1.02);
+}
+
+.username-heading{
+    font-size: 18px;
+    width: 100px;
+}
+
+.close-button{
+    width: 90px;
+    height: 40px;
+    border: none;
+    background-color: darkmagenta;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.confirm-button{
+    width: 90px;
+  height: 40px;
+  border: none;
+  background-color: orangered;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  outline: none;
+}
+
+.popup-heading{
+    color: #3b82f6;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.popup-buttons{
+
+    display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: center;
+}
+
+.logout-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap:10px;
+    padding: 10px;
+}
+
 @media screen and (min-width: 768px) {  
+    .confirm-button{
+        width: 120px;
+    }
+    .close-button{
+        width: 120px;
+    }
     .header-container{
-        justify-content: space-evenly;
+        justify-content: space-between;
+    }
+    .small-device-icon{
+        display:none;
+    }
+    .username-heading{
+        font-size: 30px;
+        width: inherit;
+    }
+    .logout-button{
+        display: block;
     }
 }

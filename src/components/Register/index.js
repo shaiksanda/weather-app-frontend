@@ -8,13 +8,13 @@ import "./index.css"
 
 const Register = () => {
     const [username, setUsername] = useState("")
-    const [fullname, setFullname] = useState("")
+    
     const [password, setPassword] = useState("")
     const [error, setError] = useState("")
     const [showError, setShowError] = useState(false)
     const [showPassword, setShowPassword] = useState(false)
     const [email, setEmail] = useState("")
-    const [gender, setGender] = useState("")
+    
 
     const navigate = useNavigate()
 
@@ -30,9 +30,6 @@ const Register = () => {
         setShowPassword(!showPassword)
     }
 
-    const handleFullname = (e) => {
-        setFullname(e.target.value)
-    }
 
     const handleEmail = (e) => {
         setEmail(e.target.value)
@@ -42,9 +39,7 @@ const Register = () => {
     const onSubmitSuccess = () => {
         setUsername('');
         setPassword('');
-        setFullname('');
         setEmail('');
-        setGender('');
         navigate("/login")
 
     }
@@ -60,7 +55,7 @@ const Register = () => {
     const handleRegister = async (e) => {
         e.preventDefault()
 
-        if (!username || !password || !email || !gender || !fullname) {
+        if (!username || !password || !email) {
             setError("Please fill all fields");
             setShowError(true);
             setTimeout(() => {
@@ -95,7 +90,7 @@ const Register = () => {
                 headers: {
                     "Content-Type": "application/json"
                 },
-                body: JSON.stringify({ username, password, email, fullname, gender })
+                body: JSON.stringify({ username, password, email })
             }
 
             const response = await fetch(url, options)
@@ -130,19 +125,13 @@ const Register = () => {
                 <img className="login-image" alt="login" src="https://cdni.iconscout.com/illustration/premium/thumb/sign-up-login-4489366-3723273.png" />
             </div>
             <form onSubmit={handleRegister} className="form">
-                <label className="label" htmlFor="fullname">FULLNAME</label>
-                <input onChange={handleFullname} value={fullname} className="input" type="text" placeholder="FULLNAME" id="fullname" />
+                
                 <label className="label" htmlFor="username">USERNAME</label>
                 <input onChange={handleUsername} value={username} className="input" type="text" placeholder="USERNAME" id="username" />
                 <label className="label" htmlFor="email">EMAIL</label>
                 <input onChange={handleEmail} value={email} className="input" type="email" placeholder="EMAL" id="email" />
-                <label className="label" htmlFor="gender">GENDER</label>
-                <select onChange={(e) => setGender(e.target.value)} className="input" id="gender">
-                    <option value="">Select Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Others">Others</option>
-                </select>
+                
+                
                 <label className="label" htmlFor="password">PASSWORD</label>
                 <input value={password} onChange={handlePassword} className="input" type={showPassword ? "text" : "password"} placeholder="PASSWORD" id="password" />
                 <div className="checkbox-container">

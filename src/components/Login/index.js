@@ -26,7 +26,8 @@ const Login = () => {
 
 
     const onSubmitSuccess = (jwtToken) => {
-        Cookies.set("jwt_token", jwtToken)
+        Cookies.set("jwt_token", jwtToken,{expires:10})
+        Cookies.set('username',username,{expires:10})
         navigate("/weather")
 
     }
@@ -52,15 +53,15 @@ const Login = () => {
             return; // Stop the next steps if validation fails
         }
 
-        // if(password.length<6) {
-        //     setError("Password must be at least 6 characters");
-        //     setShowError(true);
-        //     setTimeout(() => {
-        //         setShowError(false);
-        //         setError("");
-        //     }, 5000);
-        //     return;
-        // }
+        if(password.length<6) {
+            setError("Password must be at least 6 characters");
+            setShowError(true);
+            setTimeout(() => {
+                setShowError(false);
+                setError("");
+            }, 5000);
+            return;
+        }
 
 
         try {

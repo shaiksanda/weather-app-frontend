@@ -55,11 +55,11 @@ const Weather = () => {
     return (
         <div className="weather-container">
             <Header />
-            <div>
+            <div className="container">
                 {data ? (
                     <div>
                         <h1 style={{ textAlign: "center" }}>
-                            Weather in  {data.name.replace(/-/g, '')}, India
+                            Weather in  <span className="name-heading">{data.name.replace(/-/g, '')}</span>, India
 
                         </h1>
                         {data.main ? (
@@ -72,6 +72,18 @@ const Weather = () => {
                                     <div className="data-container data-container-2">
                                         <img alt="" className="icon" src="https://res.cloudinary.com/dq4yjeejc/image/upload/v1733644926/temp_img_huksja.png" />
                                         <p className="content">Feels Like: {data.main.feels_like}°C</p>
+                                    </div>
+                                    <div className="data-container data-container-8">
+                                        <img alt="" className="icon" src="https://static.vecteezy.com/system/resources/previews/012/066/505/original/sunny-and-rainy-day-weather-forecast-icon-meteorological-sign-3d-render-png.png" />
+                                        <p className="content">Time of the Day: {convertTime(data.dt)}</p>
+                                    </div>
+                                    <div className="data-container data-container-9">
+                                        <img alt="" className="icon" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.O2bezZG1-YkKDXW-vSK90wHaEo%26pid%3DApi&f=1&ipt=70e2bb173380931469ee12eb9a312f1d1ad93eb0e9c59f3c8ee9b818fd3d4bef&ipo=images" />
+                                        <p className="content">Sunrise: {convertTime(data.sys.sunrise)}</p>
+                                    </div>
+                                    <div className="data-container data-container-10">
+                                        <img alt="" className="icon" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.gTYLIaSb6qvbVUzBrWvq5QHaEc%26pid%3DApi&f=1&ipt=3ae6a0093087564331dc771a9df741d2277fc2965b1716d77fa9d551e892cc93&ipo=images" />
+                                        <p className="content">Sunset: {convertTime(data.sys.sunset)}</p>
                                     </div>
                                     <div className="data-container data-container-3">
                                         <img alt="" className="icon" src="https://res.cloudinary.com/dq4yjeejc/image/upload/v1733645119/Screenshot_2024-12-08_133359_xthsqr.png" />
@@ -94,18 +106,9 @@ const Weather = () => {
                                         <img alt="" className="icon" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse2.mm.bing.net%2Fth%3Fid%3DOIP.zopRzYPgOssNMd3Kej9F4gHaGM%26pid%3DApi&f=1&ipt=6dada31aa98515598031f8140a2113f9c942b3d274c7a4ac60928bcc961ae601&ipo=images" />
                                         <p className="content">Wind Direction: {getWindDirection(data.wind.deg)}</p>
                                     </div>
-                                    <div className="data-container data-container-8">
-                                        <img alt="" className="icon" src="https://static.vecteezy.com/system/resources/previews/012/066/505/original/sunny-and-rainy-day-weather-forecast-icon-meteorological-sign-3d-render-png.png" />
-                                        <p className="content">Time of the Day: {convertTime(data.dt)}</p>
-                                    </div>
-                                    <div className="data-container data-container-9">
-                                        <img alt="" className="icon" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.O2bezZG1-YkKDXW-vSK90wHaEo%26pid%3DApi&f=1&ipt=70e2bb173380931469ee12eb9a312f1d1ad93eb0e9c59f3c8ee9b818fd3d4bef&ipo=images" />
-                                        <p className="content">Sunrise: {convertTime(data.sys.sunrise)}</p>
-                                    </div>
-                                    <div className="data-container data-container-10">
-                                        <img alt="" className="icon" src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse3.mm.bing.net%2Fth%3Fid%3DOIP.gTYLIaSb6qvbVUzBrWvq5QHaEc%26pid%3DApi&f=1&ipt=3ae6a0093087564331dc771a9df741d2277fc2965b1716d77fa9d551e892cc93&ipo=images" />
-                                        <p className="content">Sunset: {convertTime(data.sys.sunset)}</p>
-                                    </div>
+                                    
+                                    
+                                    
                                 </div>
 
                             </>
