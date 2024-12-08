@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { L26, } from 'react-isloading'
+import { L8, } from 'react-isloading'
 import Header from "../Header";
 
 import "./index.css";
@@ -117,7 +117,7 @@ const Weather = () => {
                         )}
                     </div>
                 ) : (
-                    <L26
+                    <L8
                         style={{
                             height: "6rem",
                             width: "6rem",
